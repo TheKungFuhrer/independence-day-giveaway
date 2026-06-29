@@ -1,0 +1,131 @@
+/* ============================================================
+   Independence Day Giveaway — page-specific additions.
+   Loaded ON TOP OF styles.css. Only NEW classes (prefixed .gv-
+   or namespaced under giveaway sections) live here, so the
+   scholarship page (styles.css) is left completely untouched.
+   ============================================================ */
+
+/* Hero entrance — base state is VISIBLE; we animate transform only, never
+   opacity, so a frozen animation clock (background capture, print/PDF,
+   reduced-motion) can never leave the hero invisible. */
+.gv-rise { animation: gvRise 600ms var(--ease-standard); }
+@keyframes gvRise { from { transform: translateY(14px); } to { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .gv-rise { animation: none; } }
+
+/* Hero prize card (replaces the scholarship VSL on the hero right) */
+.gv-prize {
+  width: 100%; max-width: 440px;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(124,215,168,0.18) 0%, rgba(0,0,0,0) 55%),
+    var(--emerald-deep);
+  border: 1px solid rgba(124,215,168,0.42);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column; gap: 14px;
+}
+.gv-prize .pz-amount {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(56px, 7vw, 78px); line-height: 0.9;
+  letter-spacing: -0.03em; color: #fff;
+}
+.gv-prize .pz-desc { font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,0.85); }
+.gv-prize .pz-rows { display: flex; flex-direction: column; margin-top: 4px; }
+.gv-prize .pz-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px;
+}
+.gv-prize .pz-row .k { color: rgba(255,255,255,0.62); }
+.gv-prize .pz-row .val { font-weight: 700; color: #fff; }
+.gv-prize .pz-clock { margin-top: 8px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+.pz-clock-label {
+  font: 700 11px/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-bright);
+}
+
+/* Countdown size modifiers (built on styles.css .vc-* clock parts) */
+.gv-clock-sm { gap: 6px; }
+.gv-clock-sm .vc-unit { min-width: 0; flex: 1; padding: 8px 4px; }
+.gv-clock-sm .vc-unit b { font-size: 22px; }
+.gv-clock-lg { gap: 10px; flex-wrap: wrap; }
+.gv-clock-lg .vc-unit { min-width: 78px; padding: 14px 14px; }
+.gv-clock-lg .vc-unit b { font-size: clamp(34px, 4vw, 46px); }
+.gv-clock-lg .vc-unit i { font-size: 11px; }
+
+/* Trust line (hero + final CTA) */
+.gv-trust {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+  font: 500 13px/1.4 var(--font-body); color: rgba(255,255,255,0.68);
+}
+.gv-trust-sep { color: var(--accent-bright); font-weight: 700; }
+
+/* How to enter — 3-step grid (reuses .nm-card) */
+.gv-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 920px) { .gv-steps { grid-template-columns: 1fr; } }
+
+/* Live embedded survey iframe wrapper */
+.gv-embed-live {
+  width: 100%;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+.gv-embed-live iframe { width: 100%; border: 0; display: block; }
+
+/* Entry form — empty embed slot the user fills with their survey */
+.gv-embed {
+  width: 100%; min-height: 560px;
+  background:
+    radial-gradient(90% 120% at 50% 0%, rgba(124,215,168,0.08) 0%, rgba(0,0,0,0) 60%),
+    var(--charcoal);
+  border: 1.5px dashed rgba(124,215,168,0.4);
+  border-radius: var(--r-xl);
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px;
+}
+.gv-embed .ge-inner { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; max-width: 460px; }
+.gv-embed .ge-icon {
+  width: 64px; height: 64px; border-radius: var(--r-lg);
+  background: var(--emerald-deep); border: 1px solid rgba(124,215,168,0.3);
+  color: var(--accent-bright); display: flex; align-items: center; justify-content: center;
+}
+.gv-embed .ge-note { font-family: var(--font-display); font-weight: 700; font-size: 24px; letter-spacing: -0.01em; color: #fff; }
+.gv-embed .ge-sub { font-size: 14px; line-height: 1.55; color: var(--cool-grey); }
+.gv-embed .ge-sub code {
+  font: 500 12.5px/1 var(--font-mono); color: var(--accent-bright);
+  background: rgba(124,215,168,0.1); padding: 2px 6px; border-radius: 6px;
+}
+
+/* Urgency band */
+.gv-urgency {
+  background: var(--emerald-deep);
+  border-top: 1px solid rgba(124,215,168,0.18);
+  border-bottom: 1px solid rgba(124,215,168,0.18);
+}
+.gv-urgency-inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
+@media (max-width: 920px) { .gv-urgency-inner { grid-template-columns: 1fr; gap: 36px; } }
+.gv-urgency-actions { margin-top: 28px; }
+.gv-urgency-clock {
+  background: rgba(0,0,0,0.32); border: 1px solid rgba(124,215,168,0.22);
+  border-radius: var(--r-xl); padding: 26px 28px;
+}
+.gv-urgency-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.66); }
+
+/* Final CTA */
+.gv-finalcta {
+  display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+}
+
+/* Compliance footer */
+.gv-foot-tags { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.gv-foot-tags span {
+  font: 700 11px/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.05); border: 1px solid var(--line-dark);
+  border-radius: var(--r-pill); padding: 8px 14px;
+}
+.gv-legal {
+  font: 400 13px/1.65 var(--font-body); color: var(--cool-grey);
+  max-width: 980px; text-wrap: pretty;
+  padding-top: 20px; border-top: 1px solid var(--line-dark);
+}
+.gv-legal-fine { font-size: 12px; padding-top: 0; border-top: 0; color: rgba(148,148,148,0.85); }
