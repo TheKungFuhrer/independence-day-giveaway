@@ -274,7 +274,7 @@ function GvEntryForm() {
         <div className="gv-embed-live" id="entry-embed">
           <iframe
             src="https://links.omg-rentals.com/widget/survey/to6jicyeSjrkI2jV7rHP"
-            style={{ border: 'none', width: '100%', minHeight: '720px', display: 'block' }}
+            style={{ border: 'none', width: '100%', display: 'block' }}
             scrolling="no"
             id="to6jicyeSjrkI2jV7rHP"
             title="survey"
