@@ -280,6 +280,9 @@ function GvEntryForm() {
             title="survey"
           ></iframe>
         </div>
+        <p style={{ textAlign: 'center', marginTop: 18, fontSize: 13, lineHeight: 1.5, color: 'var(--cool-grey)' }}>
+          No purchase necessary · US venue owners 18+ · <a href="/official-rules" target="_blank" rel="noopener" style={{ color: 'var(--accent-bright)' }}>Official Rules</a>
+        </p>
       </div>
     </section>);
 }
@@ -401,7 +404,7 @@ function GvComplianceFooter() {
 
         <div className="gv-legal">
           <strong style={{ color: 'rgba(255,255,255,0.82)' }}>Official Rules summary.</strong>{' '}
-          NO PURCHASE NECESSARY to enter or win. A purchase will not improve your chances of winning. Open to legal U.S. residents 18 years or older who own or operate an event venue. Void where prohibited. The giveaway ends Monday, July 6, 2026 at 12:00 PM EST; one winner will be selected and notified the same day. A free alternate method of entry is available — see the Official Rules. The prize is one done-for-you Booking Engine build (a $13,997 value); the winner is responsible for their own advertising spend (approximately $35/day), paid into the winner's own ad account. Sponsor: OMG Rentals. By entering, you agree to the Official Rules.
+          NO PURCHASE NECESSARY to enter or win. A purchase will not improve your chances of winning. Open to legal U.S. residents 18 years or older who own or operate an event venue. Void where prohibited. The giveaway ends Monday, July 6, 2026 at 12:00 PM EST; one winner will be selected and notified the same day. A free alternate method of entry is available — see the <a href="/official-rules" target="_blank" rel="noopener" style={{ color: 'var(--accent-bright)' }}>Official Rules</a>. The prize is one done-for-you Booking Engine build (a $13,997 value); the winner is responsible for their own advertising spend (approximately $35/day), paid into the winner's own ad account. Sponsor: OMG Rentals. By entering, you agree to the <a href="/official-rules" target="_blank" rel="noopener" style={{ color: 'var(--accent-bright)' }}>Official Rules</a>.
         </div>
         <div className="gv-legal gv-legal-fine">
           © 2026 OMG Rentals · Atlanta, GA · This giveaway is not affiliated with, sponsored by, or endorsed by any official anniversary commission, any sporting event or league, or Meta Platforms, Inc.
